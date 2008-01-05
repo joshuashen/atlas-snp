@@ -44,7 +44,9 @@ This program calls SNPs from the cross_match -discrep_list output produced from 
 It outputs two files: one is a list of SNPs; the other is the coverage of each base of reference, formated similar to phred quality files.
 
 The format of SNP list is like this:
+
 `refName    coordinate  refBase homopolymer  refEnv  coverage SNPBase adjustedQual oriQual numVariant numAlter reads_info..`
+
 `gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1    1    A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt`
 
 This file contains all the information required to filter SNPs. We can use a straightforward ruby/perl/shell script to do filtering and calling homozygous/heterozygous based on:
