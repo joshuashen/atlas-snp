@@ -50,8 +50,11 @@ The format of SNP list is like this:
 `gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1    1    A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt`
 
 This file contains all the information required to filter SNPs. We can use a straightforward ruby/perl/shell script to do filtering and calling homozygous/heterozygous based on:
- 1) number of variant reads vs coverage
- 2) adjusted quality
- 3) the size of longest homopolymer run nearby
+
+  1) number of variant reads vs coverage
+  
+  2) adjusted quality
+  
+  3) the size of longest homopolymer run nearby
 
 For more help information and other options, just type -h as the argument.
