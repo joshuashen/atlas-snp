@@ -37,7 +37,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 This program calls SNPs from the cross_match -discrep_list output produced from step 1:
 
-     `ruby ~ys135495/ruby/Atlas-mapper/atlas-mapper-SNP.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
+     `ruby atlas-mapper-SNP.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
 
 ( The -x specifies the cross_match result concatenated from the batch results from step 1.  )
 
@@ -51,10 +51,10 @@ The format of SNP list is like this:
 
 This file contains all the information required to filter SNPs. We can use a straightforward ruby/perl/shell script to do filtering and calling homozygous/heterozygous based on:
 
-  1) number of variant reads vs coverage
+1) number of variant reads vs coverage
   
-  2) adjusted quality
+2) adjusted quality
   
-  3) the size of longest homopolymer run nearby
+3) the size of longest homopolymer run nearby
 
 For more help information and other options, just type -h as the argument.
