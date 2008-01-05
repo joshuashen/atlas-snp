@@ -1,4 +1,4 @@
-#This is a brief introduction of how to use this set of programs.
+# This is a brief introduction of how to use this set of programs.
 
 The procedure has three steps:
 1. Mapping and aligning 454 reads onto the reference genome.
@@ -9,7 +9,7 @@ The procedure has three steps:
 I have written a set of streamlined programs to do step 1 and step 2a. The step 2b (indels) is in the working. Step 3 is straightforward in terms of programming but requires some discussions on the biology.
 
 
-1. Atlas-mapper
+= 1. Atlas-mapper =
 
 Map the reads (454 or Sanger) to reference sequence via BLAT and do refined sequence local alignment via cross_match.
 
@@ -50,4 +50,3 @@ This file contains all the information required to filter SNPs. We can use a str
  3) the size of longest homopolymer run nearby
 
 For more help information and other options, just type -h as the argument.
-
