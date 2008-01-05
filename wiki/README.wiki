@@ -1,15 +1,18 @@
 # This is a brief introduction of how to use this set of programs.
 
 The procedure has three steps:
+
 1. Mapping and aligning 454 reads onto the reference genome.
+
 2. Calling raw (a) SNPs and (b) indels based on results from step 1.
+
 3. SNP/indel filtering based on quality scores and biology.
 
 
 I have written a set of streamlined programs to do step 1 and step 2a. The step 2b (indels) is in the working. Step 3 is straightforward in terms of programming but requires some discussions on the biology.
 
 
-= 1. Atlas-mapper =
+*1. Atlas-mapper*
 
 Map the reads (454 or Sanger) to reference sequence via BLAT and do refined sequence local alignment via cross_match.
 
