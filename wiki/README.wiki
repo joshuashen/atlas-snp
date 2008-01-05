@@ -18,13 +18,13 @@ Map the reads (454 or Sanger) to reference sequence via BLAT and do refined sequ
 
 1) Format the reference sequence (including making blat ooc file, splitting reference into smaller pieces for cross_match):
 
-     ruby atlas-mapper-format-ref.rb -r reference.fasta
+     `ruby atlas-mapper-format-ref.rb -r reference.fasta`
 
 The reference.fasta is the reference sequences in one fasta file. The output is a directory named by reference.fasta with a suffix "Env4mapping".
 
 2) Map and align: (including doing blat, picking best hits and uniquely mapped reads, doing cross_match etc)
  
-     ruby atlas-mapper-do.rb -q query.fasta -r reference.fasta  [options]
+     `ruby atlas-mapper-do.rb -q query.fasta -r reference.fasta  [ options ]`
 
 query.fasta is a fasta file containing a batch of 454 reads.
 
@@ -33,19 +33,19 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 *Note* the query.fasta should be in reasonable size.  It's best to be no larger than 10Mbp. A typical 454 run produce 100+Mbp sequence. So it is necessary to split the run into smaller batches and do each batch on one cluster node.
 
 
-2. Atlas-mapper-SNP
+*2. Atlas-mapper-SNP*
 
 This program calls SNPs from the cross_match -discrep_list output produced from step 1:
 
-     ruby ~ys135495/ruby/Atlas-mapper/atlas-mapper-SNP.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]
+     `ruby ~ys135495/ruby/Atlas-mapper/atlas-mapper-SNP.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
 
 ( The -x specifies the cross_match result concatenated from the batch results from step 1.  )
 
 It outputs two files: one is a list of SNPs; the other is the coverage of each base of reference, formated similar to phred quality files.
 
 The format of SNP list is like this:
-refName    coordinate  refBase homopolymer  refEnv  coverage SNPBase adjustedQual oriQual numVariant numAlter reads_info..
-gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1       1       A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt
+`refName    coordinate  refBase homopolymer  refEnv  coverage SNPBase adjustedQual oriQual numVariant numAlter reads_info..`
+`gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1    1    A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt`
 
 This file contains all the information required to filter SNPs. We can use a straightforward ruby/perl/shell script to do filtering and calling homozygous/heterozygous based on:
  1) number of variant reads vs coverage
