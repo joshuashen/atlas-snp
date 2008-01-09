@@ -1,4 +1,11 @@
-# This is a brief introduction of how to use this set of programs.
+== Requirement ==
+ruby
+perl
+blat
+cross_match
+
+
+== Usage == 
 
 The procedure has three steps:
 
