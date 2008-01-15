@@ -44,7 +44,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 This program calls SNPs from the cross_match -discrep_list output produced from step 1:
 
-     `ruby atlas-mapper-SNP.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
+     `ruby atlas-snp.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
 
 ( The -x specifies the cross_match result concatenated from the batch results from step 1.  )
 
