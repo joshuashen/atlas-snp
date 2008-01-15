@@ -25,13 +25,13 @@ Map the reads (454 or Sanger) to reference sequence via BLAT and do refined sequ
 
 1) Format the reference sequence (including making blat ooc file, splitting reference into smaller pieces for cross_match):
 
-     `ruby atlas-mapper-format-ref.rb -r reference.fasta`
+     `ruby /PATH/TO/atlas-mapper-format-ref.rb -r reference.fasta`
 
 The reference.fasta is the reference sequences in one fasta file. The output is a directory named by reference.fasta with a suffix "Env4mapping".
 
 2) Map and align: (including doing blat, picking best hits and uniquely mapped reads, doing cross_match etc)
  
-     `ruby atlas-mapper-do.rb -q query.fasta -r reference.fasta  [ options ]`
+     `ruby /PATH/TO/atlas-mapper-do.rb -q query.fasta -r reference.fasta  [ options ]`
 
 query.fasta is a fasta file containing a batch of 454 reads.
 
@@ -44,7 +44,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 This program calls SNPs from the cross_match -discrep_list output produced from step 1:
 
-     `ruby atlas-snp.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
+     `ruby /PATH/TO/atlas-snp.rb -x cross_match_output -r reference.fasta -o prefix_of_outputs  [-a adjust_quality_slope]`
 
 ( The -x specifies the cross_match result concatenated from the batch results from step 1.  )
 
