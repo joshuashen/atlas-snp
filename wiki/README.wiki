@@ -3,7 +3,7 @@
   * perl
   * blat
   * cross_match
-
+  * large RAM
 
 == Usage == 
 
@@ -27,6 +27,7 @@ Map the reads (454 or Sanger) to reference sequence via BLAT and do refined sequ
 
      `ruby /PATH/TO/atlas-mapper-format-ref.rb -r reference.fasta`
 
+Note: this program requires about 3.0G RAM for the human genome.
 The reference.fasta is the reference sequences in one fasta file. The output is a directory named by reference.fasta with a suffix "Env4mapping".
 
 2) Map and align: (including doing blat, picking best hits and uniquely mapped reads, doing cross_match etc)
