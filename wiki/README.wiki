@@ -43,7 +43,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 Here is an Bash shell command example to submit all batches of mapping jobs to a cluster:
 
-     `for f in batch_*.fa; do bsub -o lsf.o -e lsf.e -J $f ruby ..../atlas-mapper-do.rb -q $f -r ref.fa [ options ]; done `
+     `for f in batch_*.fa; do bsub -o lsf.o -e lsf.e -J $f "ruby ..../atlas-mapper-do.rb -q $f -r ref.fa [ options ]"; done `
 
 
 *2. Atlas-SNP*
