@@ -41,7 +41,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 *Note* the query.fasta should be in reasonable size.  It's best to be no larger than 10Mbp. A typical 454 run produce 100+Mbp sequence. So it is necessary to split the run into smaller batches and do each batch on one cluster node.
 
-Here is an Bash shell command example to submit all batches of mapping jobs to a cluster:
+Here is a Bash shell command example to submit all batches of mapping jobs to a cluster:
 
      `for f in batch_*.fa; do bsub -o lsf.o -e lsf.e -J $f "ruby ..../atlas-mapper.rb -q $f -r ref.fa [ options ]"; done `
 
