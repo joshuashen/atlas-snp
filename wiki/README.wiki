@@ -1,6 +1,5 @@
 == Requirement ==
   * ruby
-  * perl
   * blat
   * cross_match
   * large RAM
