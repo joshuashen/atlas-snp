@@ -1,4 +1,4 @@
-This program outputs raw SNP calling result. In order to improve the accuracy, you need to set up a series of filters. Here is a list of factors that are considered useful:
+This program outputs raw SNP calling result. In order to improve the accuracy, we need to set up a series of filters to discard potential false positives. Here is a list of factors that are useful:
 
   # number of SNP reads: the more reads agree upon a SNP, the less likely that the SNP is caused by sequencing errors
   # adjusted quality score: quality score is an estimate of the probability that this base-substitution is caused by sequencing errors. It is not independent of number of SNP reads, but still contains new information
