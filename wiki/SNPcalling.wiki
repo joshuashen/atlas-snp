@@ -9,7 +9,7 @@ This program outputs raw SNP calling result. In order to improve the accuracy, w
  
 ===Quality assessment of the SNP calling. ===
  
-Ideally we should do independent experiments to validate some set of the SNPs in order to assess the accuracy. There is one computational method based on the chemistry of DNA mutation: the transition / transversion ratio. Assuming the true SNPs are results of naturally occurred DNA mutation, the transition/transverion ratio should be close to 2/1. The substitutions from 454 sequencing errors are assumed to be random nucleotide changes, so the ratio is 1:2. Thus we could use a set of two equations based on the base-change spectrum to estimate the false positive rate of SNP calling. Let x, y be the proportion of true SNPs and false SNPs respectively, and m be the ratio of transition/transversion observed in the SNPs called, then 
+Ideally we should do independent experiments to validate the SNPs. Computationally we can rely on the chemistry of DNA mutation: the transition / transversion ratio. Assuming the true SNPs are results of naturally occurred DNA mutation, the transition/transverion ratio should be close to 2/1. The substitutions from 454 sequencing errors are assumed to be random nucleotide changes, so the ratio is 1:2. Thus we could use a set of two equations based on the base-change spectrum to estimate the false positive rate of SNP calling. Let x, y be the proportion of true SNPs and false SNPs respectively, and m be the ratio of transition/transversion observed in the SNPs called, then 
 
 {{{
   x + y = 1
