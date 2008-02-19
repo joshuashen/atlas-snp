@@ -4,6 +4,12 @@
   * cross_match
   * large RAM
 
+
+You can find blat binaries on Jim Kent's website: http://hgwdev.cse.ucsc.edu/~kent/exe/
+
+For cross_match, http://www.phrap.org/consed/consed.html#howToGet
+
+
 == Usage == 
 
 The procedure has three steps:
