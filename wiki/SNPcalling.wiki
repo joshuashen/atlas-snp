@@ -1,6 +1,7 @@
 This program outputs raw SNP calling result. In order to improve the accuracy, we need to set up a series of filters to discard potential false positives. Here is a list of factors that are useful:
 
   # number of SNP reads: the more reads agree upon a SNP, the less likely that the SNP is caused by sequencing errors
+  # coverage of the base: ignore the base if the coverage is larger than certain cutoff value -- analogous to repeats cutoff in genome assembly.
   # adjusted quality score: quality score is an estimate of the probability that this base-substitution is caused by sequencing errors. It is not independent of number of SNP reads, but contains new information
   # strand: a substitution is less likely to be caused by 454 sequencing errors if the SNP reads are from both strands.
   # homopolymer-run size: in 454 sequencing, both substitution and indel errors are closely related to homopolymer runs. 
