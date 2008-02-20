@@ -18,3 +18,7 @@ Ideally we should do independent experiments to validate the SNPs. Computational
 }}}
    
 We get x and y by solve this equation. 
+
+Appendix:
+Transitions       C:G <-> T:A
+Transversion    C:G <-> G:C, T:A <-> G:C, T:A <-> A:T
