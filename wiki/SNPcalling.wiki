@@ -5,6 +5,7 @@ This program outputs raw SNP calling result. In order to improve the accuracy, w
   # adjusted quality score: quality score is an estimate of the probability that this base-substitution is caused by sequencing errors. It is not independent of number of SNP reads, but contains new information
   # strand: a substitution is less likely to be caused by 454 sequencing errors if the SNP reads are from both strands.
   # homopolymer-run size: in 454 sequencing, both substitution and indel errors are closely related to homopolymer runs. 
+  # base-swapping: about 20% of 454 substitution errors appear to be swapped sequences between two consecutive bases. 
   # ratio of SNP reads vs coverage: for a diploid genome, the number of SNPs reads should follow binomial distribution, given the coverage and the SNP is heterozygous. 
 
  
