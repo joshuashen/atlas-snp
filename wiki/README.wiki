@@ -67,6 +67,9 @@ The format of SNP list is like this:
 
 `gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1    1    A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt`
 
+`2L      5867    A       2       ATGTACAACAGAG   5       G       118.86  129     5       5       G(25)212063_3716_3901(238)(30.0/264)-ctctgtCgtacat(3.03/0.0/227)snp;G(25)253893_0191_3897(22)(30.0/202)+atgtacGacagag(3.03/0.0/169)snp;G(25)120728_2743_3047(236)(30.0/262)-ctctgtCgtacat(3.03/0.0/225)snp;G(27)270157_2954_3987(203)(30.0/229)-ctctgtCgtacat(3.03/0.0/192)snp;G(27)316815_3361_0108(158)(30.0/184)-ctctgtCgtacat(3.03/0.0/147)snp;
+`
+
 This file contains all the information required to filter SNPs. We can use a straightforward ruby/perl/shell script to do filtering and calling homozygous/heterozygous based on:
 
  # number of variant reads vs coverage
