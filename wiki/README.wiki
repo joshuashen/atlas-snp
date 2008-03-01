@@ -37,7 +37,7 @@ The reference.fasta is the reference sequences in one fasta file. The output is 
 
 2) Map and align: (including doing blat, picking best hits and uniquely mapped reads, doing cross_match etc)
  
-     `ruby /PATH/TO/atlas-mapper.rb -q query.fasta -r reference.fasta  [ options ]`
+     `ruby /PATH/TO/atlas-mapper.rb -q query.fasta -r reference.fasta [ options ]`
 
 query.fasta is a fasta file containing a batch of 454 reads.
 
@@ -48,7 +48,7 @@ The output is a directory with prefix "Mapping_of_". It contains the blat result
 
 Here is a Bash shell command example to submit all batches of mapping jobs to a cluster:
 
-     `for f in batch_*.fa; do bsub -o lsf.o -e lsf.e -J $f "ruby ..../atlas-mapper.rb -q $f -r ref.fa [ options ]"; done `
+     `for f in batch_*.fa; do bsub -o lsf.o -e lsf.e -J $f "ruby ..../atlas-mapper.rb -q $f -r ref.fa  [ options ]"; done `
 
 
 *2. Atlas-SNP*
@@ -82,10 +82,12 @@ For more help information and other options, just type -h as the argument.
 
 *2.1 Compute depth-coverage on reference *
 
-    `ruby atlas-mapper-coverage.rb -x cross_match.output [-r ref.fasta] [ -t targeted_genomic_regions ] [ options ]`
+    `ruby atlas-mapper-coverage.rb -x cross_match.output  -o prefix_of_output [-r ref.fasta] [ -t targeted_genomic_regions ] [ options ]`
 
  -r or -t is required. 
  -r specifies the reference fasta file. If provided, the program will compute the depth-coverage for each base on the reference. *NOTE* this is time-consuming for large genomes. 
  -t specifies a list of targeted genomic regions, with format like this:
-  `chromosome    start_position    end_position`
+
+  `target_name	reference_name	start_on_ref	end_on_ref	direction(1 or -1)`
+
       If provided, the program will compute the depth-coverage only for bases in the targeted regions. 
