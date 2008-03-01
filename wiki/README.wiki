@@ -65,7 +65,7 @@ The format of SNP list is like this:
 
 `refName    coordinate  refBase homopolymer  refEnv  coverage SNPBase adjustedQual oriQual numVariant numAlter reads_info..`
 
-`gi|49175990|    9776    T       5       ACACGGTATTTTT   1    A       9.41    15      1    1    A(15)213878_0447_0217(57)(222.0/228)-aaaaaaTccgtgt`
+`DDB0169550      317     A       5       ATTTATATTTTTA   92      T       16.48   19      1       1       T(19)089207_1601_3197(16)(134.0/140)-taaaatAataaat(1.43/0.0/1)swap;`
 
 
 `U       6849    C       2       GGCAGACTTCAAG   12      T       37      37      1       1       T(37)086878_2543_1772(211)(237.0/243)+ggcagaTttcaag(0.82/0.0/1)snp;`
