@@ -59,7 +59,7 @@ This program calls SNPs from the cross_match -discrep_list output produced from 
 
 ( The -x specifies the cross_match result concatenated from the batch results from step 1.  )
 
-It outputs two files: one is a list of SNPs; the other is the coverage of each base of reference, formated similar to phred quality files.
+It outputs  a list of SNPs.
 
 The format of SNP list is like this:
 
