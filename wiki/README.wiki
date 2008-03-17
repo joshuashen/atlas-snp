@@ -1,3 +1,5 @@
+{{{
+
 *Quick start*
 
 1.  ruby atlas-mapper-format-ref.rb  -r reference.fasta    ## format reference
@@ -213,4 +215,4 @@ Optional
 
 The most important output of this program is appended in the 14th column. It is an estimation of Pr(e|c), the probability of being substitution errors of the candidate SNP site. To collect a set of high-confidence SNPs, the user can set a cutoff value for the Pr(e|c). For an example, a cutoff of Pr(e|c) at 0.05 would put an upper bound of false positive rate at about 0.05. 
 
-
+}}}
