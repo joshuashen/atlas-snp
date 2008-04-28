@@ -1,3 +1,5 @@
+Note: this is a version before atlas-snp-evaluate.rb was written. Please keep in mind that this is not the optimal way to do SNP filtering anymore. 
+
 This program outputs raw SNP calling result. In order to improve the accuracy, we need to set up a series of filters to discard potential false positives. Here is a list of factors that are useful:
 
   # number of SNP reads: the more reads agree upon a SNP, the less likely that the SNP is caused by sequencing errors
