@@ -1,1 +1,1 @@
-We would like to add the "Specific human SNP calling" component as an option. The purpose of doing this is improving the accurance for the known snps. We will change prior of P(SNP) based on population.reference 
+We would like to add the "Human Specific SNP calling" component as an option. The purpose of doing this is to improve the accuracy for the calling of the known snps. We will change prior of P(SNP) based on the population frequencies of known SNPs.
