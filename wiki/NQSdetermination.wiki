@@ -5,33 +5,40 @@ Neighborhood Quality Standard (NQS) determination
 Author: Zhengzheng Wan (zwan@bcm.edu)
 
 Introduction
+
 This program is used to determine the distribution of 454 reads based on the percentage of bases in a given read passing a NQS window threshold. A base is considered as passing the NQS window threshold if both its own “phred-like” quality score is at least 20, and the quality scores of each of the five flanking bases on either side are at least 15. This was defined as the “20/15 NQS criterion” for an 11-base window, as initially described by Altshuler et al. (2000) based on their empirical analysis illustrating that it can significantly reduce the number of false positive SNP discoveries. Brockman et al. (2008) recently implemented NQS as a heuristic approach to process 454 reads and showed it could effectively filter out a significant amount of false positives. Along the same line, we attempt to improve the SNP detection stringency further in Atlas-SNP by measuring the percentage of bases passing the 20/15 NQS window threshold (defined as “NQS pass ratio”), and use this metric to filter out the low quality reads entirely. 
 
 We implemented the program in a straightforward way, and the results are easy to manipulate and interpret. After running this program, a file (see Usage information) storing the NQS pass ratio for each reads will be created. In the meantime, the distribution of reads by their respective NQS pass ratio will be recorded into a second output file (see Usage information). Users can determine an NQS pass ratio cutoff based on the distribution, and then reads with pass ratios lower than the cutoff will be rejected and excluded from further SNP calling analyses. By selecting only those reads having high quality, the accuracy of calling real SNPs can be potentially improved.
 
 
 Command
+
 ruby nqs-determination.rb
 
 Usage information
+
 In order to run this module, the program named “nqs-pass-distribution.rb” (which is also included in this release) must be included in the software package. Users are required to create a working directory as the current workspace, under which, three sub-directories—“input”, “output” and “par”—must be set up by users. Therefore, all the input files must be set up in the “input” directory. A parameter file containing different parameters determined by users is required to be created under the “par” directory before running this module. All the output files will be automatically generated under the “output” directory.
 
 “input” directory
+
 The required input files are the standard 454 read file ended with “.fa”, and the corresponding 454 quality files with a suffix “.qual.fa”, which both are required when running “atlas-mapper.rb”. 
 
 Note: Usually, it will take more than 200 hours and 15G memory to run the module on the whole James Watson data, which contains 108M of reads.  To save both the CPU times and memory, users could initially set up the run in a way to split the job into manageable batches by running “split-fasta-to-batches.rb –s [454.reads] –l [length] –p [prefix] -q”. 
 
 “par” directory
+
 Users are required to input parameter information to a file named “nqs.par” under the “par” directory. The format of the parameter list required by this module is shown below.
 
 qual:	[prefix]
 
 Example
+
 qual: myPrefix
 
 This one line parameter list requires users to fill the prefix for all the input files into the second column following parameter name, “qual”. For example, if the batch name is “myPrefix_*.qual.fa”, one must write “myPrefix” to the second column.
 
 “output” directory
+
 The first output file of this module is composed of the prefix, which should have the same name as that set in parameter file (see “par” directory) and a suffix “.nqs”.  This output contains four columns of NQS information for each read.  The format is shown in following example,
 
 Read_name	No_passed	No_total		Passed_ratio
@@ -39,8 +46,11 @@ Read_name	No_passed	No_total		Passed_ratio
 288942_2474_0901        155     228     0.695067264573991
 
 Read_name: the name of the read
+
 No_passed: the number of bases passed NQS for that this read
+
 No_total:	the number of bases this read has
+
 Passed_ratio: the rate of passing NQS
 
 The second output file, with the name “prefix.nqs.dis” (Note: the prefix should have the same name as that denoted in parameter file), contains the distribution of NQS passed ratios. The distribution is composed of both passed ratio range and the number of reads whose passed ratios are within that range.   The format is as:
@@ -57,3 +67,12 @@ PassRatio_range:	No_of_reads.
 
 0.3-0.35:	1076
 
+Contributions and Acknowledgements
+
+We thank Andrew R Jackson for sharing his implementation/ideas with us on monitoring the completion status of a large number of LSF jobs.
+
+References
+
+Altshuler, D., Pollara, V., Cowles, C., Van Etten, W., Baldwin, J., Linton, L., and Lander, E. 2000. An SNP map of the human genome generated by reduced representation shotgun sequencing. Nature 407: 513-516
+
+Brockman, W., Alvarez, P., Young, S.  Garber, M., Giannoukos, G., Lee William, L., Russ, C., Lander, E. S., Nusbaum, C., and Jaffe David, B. 2008. Qaulity scores and SNP detection in sequencing-by-synthesis systems. Genome Research 18: 763-770
