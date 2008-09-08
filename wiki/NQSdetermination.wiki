@@ -35,6 +35,7 @@ This one line parameter list requires users to fill the prefix for all the input
 The first output file of this module is composed of the prefix, which should have the same name as that set in parameter file (see “par” directory) and a suffix “.nqs”.  This output contains four columns of NQS information for each read.  The format is shown in following example,
 
 Read_name	No_passed	No_total		Passed_ratio
+
 288942_2474_0901        155     228     0.695067264573991
 
 Read_name: the name of the read
@@ -44,9 +45,15 @@ Passed_ratio: the rate of passing NQS
 
 The second output file, with the name “prefix.nqs.dis” (Note: the prefix should have the same name as that denoted in parameter file), contains the distribution of NQS passed ratios. The distribution is composed of both passed ratio range and the number of reads whose passed ratios are within that range.   The format is as:
 
-PassRatio_range:	No_of_reads
+PassRatio_range:	No_of_reads.
+
 0.1-0.15:	20
+
 0.15-0.2:	64
+
 0.2-0.25:	155
+
 0.25-0.3:	401
+
 0.3-0.35:	1076
+
